@@ -1,0 +1,75 @@
+"use client";
+import { motion } from "framer-motion";
+
+const skills = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "TypeScript",
+  "Python",
+  "React.js",
+  "Next.js",
+  "Node.js",
+  "Tailwind CSS",
+  "Sanity",
+  "Shadcn",
+  "GSAP",
+  "AI Agents",
+];
+
+export default function SkillsSection() {
+  return (
+    <section className=" min-h-screen bg-[#0b0014] text-white flex items-center justify-center px-6 py-20">
+      <div className="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center">
+        
+        {/* ✅ LEFT SIDE - About Info */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="space-y-6"
+        >
+          <h2 className="text-4xl font-bold">About Me</h2>
+          <p className="text-lg text-gray-300 leading-relaxed">
+            I'm a fresher developer with many outstanding practice projects and
+            currently learning in the{" "}
+            <span className="text-pink-500 font-semibold">
+              Governor Initiative for Artificial Intelligence
+            </span>
+            . I am exploring new technologies like{" "}
+            <span className="text-pink-500 font-semibold">Web 3.0</span>,{" "}
+            <span className="text-pink-500 font-semibold">Agentic AI</span>, and
+            building exciting real-world projects to enhance my skills.
+          </p>
+          <p className="text-lg text-gray-300 leading-relaxed">
+            My passion is creating{" "}
+            <span className="text-pink-500 font-semibold">
+              interactive, responsive,  modern web applications and autonomus thing
+            </span>{" "}
+            while continuously learning the latest tools and frameworks to stay
+            ahead in tech.
+          </p>
+        </motion.div>
+
+        {/* ✅ RIGHT SIDE - Skills with Sliding Shine Effect */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="grid grid-cols-1 sm:grid-cols-3 gap-4"
+        >
+          {skills.map((skill, i) => (
+            <div key={i} className="group relative overflow-hidden rounded-lg">
+              <button className="relative z-10 w-full px-4 py-2 text-lg font-semibold border border-pink-500 rounded-lg bg-transparent text-white group-hover:shadow-[0_0_15px_rgba(255,255,255,0.6)] transition-all duration-500">
+                {skill}
+              </button>
+
+              {/* Sliding Shine Effect */}
+              <span className="absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 group-hover:left-[100%] transition-all duration-700 ease-in-out"></span>
+            </div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
