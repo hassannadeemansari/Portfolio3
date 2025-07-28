@@ -3,8 +3,11 @@ import { motion } from "framer-motion";
 
 const projects = [
   { title: "Netflix Website", img: "/netflix.PNG" },
+  { title: "Agentia world Website", img: "/agentia.PNG"  },
   { title: "infonet Website", img: "/infonet.PNG" },
+  { title: "Food Tuck Website", img: "/food.PNG" },
   { title: "Portfolio Website", img: "portfolio.PNG" },
+  { title: "aigroup Website", img: "/aigroup.PNG" },
   { title: "personal Library Manger", img: "/library-manager.PNG" },
   { title: "Vooting-booth", img: "/booth.PNG" },
 ];

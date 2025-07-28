@@ -11,10 +11,15 @@ const skills = [
   "Next.js",
   "Node.js",
   "Tailwind CSS",
+  "streamlit",
   "Sanity",
   "Shadcn",
   "GSAP",
   "AI Agents",
+  "Agent SDK",
+  "Chainlit",
+  "Shadcn",
+  "GSAP"
 ];
 
 export default function SkillsSection() {
