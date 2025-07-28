@@ -13,14 +13,14 @@ export default function SkillsSection() {
 
   const handleClick = (index: number) => {
     setActiveSkill(index);
-    setTimeout(() => setActiveSkill(null), 700); // Remove after animation
+    setTimeout(() => setActiveSkill(null), 700); // Reset after animation ends
   };
 
   return (
     <section className="min-h-screen bg-[#0b0014] text-white flex items-center justify-center px-6 py-20">
       <div className="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center">
         
-        {/* LEFT SIDE */}
+        {/* ✅ LEFT SIDE */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -44,7 +44,7 @@ export default function SkillsSection() {
           </p>
         </motion.div>
 
-        {/* RIGHT SIDE - Skills */}
+        {/* ✅ RIGHT SIDE - Skills */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -54,18 +54,17 @@ export default function SkillsSection() {
           {skills.map((skill, i) => (
             <div
               key={i}
-              className="relative overflow-hidden rounded-lg"
+              className="group relative overflow-hidden rounded-lg"
               onClick={() => handleClick(i)}
             >
-              <button className="relative z-10 w-full px-4 py-2 text-lg font-semibold border border-pink-500 rounded-lg bg-transparent text-white transition-all duration-500">
+              <button className="relative z-10 w-full px-4 py-2 text-lg font-semibold border border-pink-500 rounded-lg bg-transparent text-white group-hover:shadow-[0_0_15px_rgba(255,255,255,0.6)] transition-all duration-500">
                 {skill}
               </button>
 
-              {/* ✅ Sliding Shine Effect Triggered by activeSkill */}
+              {/* ✅ Shine Effect Works on Hover + Click */}
               <span
-                className={`absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 transition-all duration-700 ease-in-out ${
-                  activeSkill === i ? "left-[100%]" : ""
-                }`}
+                className={`absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 transition-all duration-700 ease-in-out
+                  group-hover:left-[100%] ${activeSkill === i ? "left-[100%]" : ""}`}
               ></span>
             </div>
           ))}
