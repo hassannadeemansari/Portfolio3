@@ -1,12 +1,13 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image"; // ✅ Import Next.js Image
 
 const projects = [
   { title: "Netflix Website", img: "/netflix.PNG" },
-  { title: "Agentia world Website", img: "/agentia.PNG"  },
+  { title: "Agentia world Website", img: "/agentia.PNG" },
   { title: "infonet Website", img: "/infonet.PNG" },
   { title: "Food Tuck Website", img: "/food.PNG" },
-  { title: "Portfolio Website", img: "portfolio.PNG" },
+  { title: "Portfolio Website", img: "/portfolio.PNG" }, // ✅ Added "/" at start
   { title: "aigroup Website", img: "/aigroup.PNG" },
   { title: "personal Library Manger", img: "/library-manager.PNG" },
   { title: "Vooting-booth", img: "/booth.PNG" },
@@ -27,7 +28,14 @@ export default function WorkSection() {
               transition={{ delay: i * 0.2 }}
               whileHover={{ scale: 1.05 }}
             >
-              <img src={project.img} alt={project.title} className="w-full" />
+              {/* ✅ Replaced <img> with <Image /> */}
+              <Image
+                src={project.img}
+                alt={project.title}
+                width={500} // ✅ You can adjust
+                height={300} // ✅ You can adjust
+                className="w-full h-auto object-cover"
+              />
               <div className="p-4">
                 <h3 className="text-xl font-semibold">{project.title}</h3>
               </div>

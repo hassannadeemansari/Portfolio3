@@ -36,7 +36,7 @@ export default function SkillsSection() {
         >
           <h2 className="text-4xl font-bold">About Me</h2>
           <p className="text-lg text-gray-300 leading-relaxed">
-            I'm a fresher developer with many outstanding practice projects and
+            I&apos;m a fresher developer with many outstanding practice projects and
             currently learning in the{" "}
             <span className="text-pink-500 font-semibold">
               Governor Initiative for Artificial Intelligence

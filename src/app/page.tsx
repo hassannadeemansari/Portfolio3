@@ -144,7 +144,7 @@ const scrollToSection = (sectionId: string) => {
               ))}
             </div>
 
-            <div className="fade-in text-white text-3xl md:text-4xl font-bold">👋 Hi I'm Hassan Nadeem</div>
+            <div className="fade-in text-white text-3xl md:text-4xl font-bold">👋 Hi I&apos;m Hassan Nadeem</div>
             <div className="fade-in text-4xl font-extralight font-sans text-[#3B4A5C]">Web Developer</div>
             <div className="fade-in text-white text-4xl md:text-5xl font-bold">Welcome To My</div>
             <div className="fade-in text-4xl md:text-5xl font-bold bg-gradient-to-r from-pink-400 via-pink-500 to-pink-700 bg-clip-text text-transparent">
