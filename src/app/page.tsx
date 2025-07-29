@@ -26,7 +26,7 @@ export default function Portfolio3() {
   const socialIcons = [
     {
       name: "GitHub",
-      link: "https://github.com/",
+      link: "https://github.com/hassannadeemansari",
       svg: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +46,7 @@ export default function Portfolio3() {
     },
     {
       name: "LinkedIn",
-      link: "https://linkedin.com/",
+      link: "https://www.linkedin.com/in/muhammad-hassan-42ba382ba/",
       svg: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +67,7 @@ export default function Portfolio3() {
     },
     {
       name: "Instagram",
-      link: "https://instagram.com/",
+      link: "https://www.instagram.com/shutuphassan_/",
       svg: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
