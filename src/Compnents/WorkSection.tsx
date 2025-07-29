@@ -1,50 +1,221 @@
 "use client";
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link"; // ✅ Import Link
 
 const projects = [
-  { title: "Netflix Website", img: "/netflix.PNG", link: "https://netflix-clone22.vercel.app/" },
-  { title: "Agentia world Website", img: "/agentia.PNG", link: https://agentia-world-umber.vercel.app/" },
-  { title: "infonet Website", img: "/infonet.PNG", link: "https://info-services.vercel.app/" },
-  { title: "Food Tuck Website", img: "/food.PNG", link: "https://food-tuck-beta.vercel.app/" },
-  { title: "Portfolio Website", img: "/portfolio.PNG", link: "https://hassan-nadeem.vercel.app/" },
-  { title: "aigroup Website", img: "/aigroup.PNG", link: "https://aigroup.sg/" },
-  { title: "personal Library Manager", img: "/library-manager.PNG", link: "https://library-manager2.streamlit.app/" },
-  { title: "password strength checker", img: "/image.PNG", link: "https://password-str-checker.streamlit.app/" },
-  { title: "Voting-booth", img: "/booth.PNG", link: "https://voting-booth.streamlit.app/" },
+  { 
+    title: "Netflix Clone", 
+    img: "/netflix.PNG", 
+    link: "https://netflix-clone22.vercel.app/",
+    description: "A fully responsive Netflix replica with movie browsing, trailers, and user authentication.",
+    tech: ["Next.js", "Tailwind CSS", "Firebase", "TMDB API"]
+  },
+  { 
+    title: "Agentia World", 
+    img: "/agentia.PNG", 
+    link: "https://agentia-world-umber.vercel.app/",
+    description: "Digital agency website showcasing services and client portfolio with modern animations.",
+    tech: ["React", "GSAP", "Framer Motion", "CSS Modules"]
+  },
+  { 
+    title: "Infonet Services", 
+    img: "/infonet.PNG", 
+    link: "https://info-services.vercel.app/",
+    description: "IT solutions provider website with service catalog and client dashboard.",
+    tech: ["Next.js", "TypeScript", "Chakra UI", "Stripe"]
+  },
+  { 
+    title: "Food Truck", 
+    img: "/food.PNG", 
+    link: "https://food-tuck-beta.vercel.app/",
+    description: "Online ordering system for food trucks with real-time menu updates.",
+    tech: ["React", "Redux", "Node.js", "MongoDB"]
+  },
+  { 
+    title: "Developer Portfolio", 
+    img: "/portfolio.PNG", 
+    link: "https://hassan-nadeem.vercel.app/",
+    description: "Personal portfolio featuring projects, skills, and contact information.",
+    tech: ["Next.js", "Framer Motion", "Tailwind CSS", "Three.js"]
+  },
+  { 
+    title: "AI Group", 
+    img: "/aigroup.PNG", 
+    link: "https://aigroup.sg/",
+    description: "Corporate website for AI solutions provider with interactive demos.",
+    tech: ["Wordpress", "Schemas"]
+  },
+  {
+  title: "Personal Library Manager", 
+  img: "/library-manager.PNG", 
+  link: "https://library-manager2.streamlit.app/",
+  description: "A digital bookshelf for organizing your reading journey. Track books you've read, currently reading, and want to read with ratings and reviews. Features search, filtering, and reading statistics.",
+  tech: ["Python", "Streamlit", "SQLite", "Plotly"]
+},
+{
+  title: "Password Strength Guardian", 
+  img: "/image.PNG", 
+  link: "https://password-str-checker.streamlit.app/",
+  description: "Advanced security tool that analyzes password vulnerability using entropy calculation and pattern recognition. Provides real-time strength feedback and generates uncrackable passwords.",
+  tech: ["Python", "Streamlit", "Cryptography", "Regex", "Security Algorithms"]
+},
+{
+  title: "Digital Voting Booth", 
+  img: "/booth.PNG", 
+  link: "https://voting-booth.streamlit.app/",
+  description: "Secure online voting system with encrypted ballots and real-time results visualization. Implements voter authentication and fraud detection mechanisms for trustworthy elections.",
+  tech: ["Python", "Streamlit", "OOPS" , "Regex"]
+}
 ];
 
 export default function WorkSection() {
+  const [selected, setSelected] = useState<number | null>(null);
+
   return (
-    <section className="min-h-screen bg-[#0b0014] text-white py-20">
-      <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-12">My Work</h2>
+    <section className="min-h-screen bg-gradient-to-br from-[#0b0014] to-[#1a0630] py-20 px-4">
+      <div className="max-w-6xl mx-auto">
+        <motion.h2 
+          className="text-5xl font-bold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          Featured Projects
+        </motion.h2>
+        
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, i) => (
-            <Link href={project.link} key={i} target="_blank">
-              <motion.div
-                className="rounded-xl overflow-hidden bg-white/10 border border-pink-500 backdrop-blur-md cursor-pointer"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.2 }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <Image
-                  src={project.img}
-                  alt={project.title}
-                  width={500}
-                  height={300}
-                  className="w-full h-auto object-cover"
-                />
-                <div className="p-4">
-                  <h3 className="text-xl font-semibold">{project.title}</h3>
+            <motion.div
+              key={i}
+              className="relative rounded-2xl overflow-hidden cursor-pointer group"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              whileHover={{ y: -10 }}
+              transition={{ 
+                delay: i * 0.1,
+                duration: 0.5,
+                type: "spring"
+              }}
+              onClick={() => setSelected(i)}
+            >
+              {/* Project Card */}
+              <div className="border-2 border-purple-500/30 rounded-2xl overflow-hidden bg-gradient-to-br from-[#13072e] to-[#0d0430] h-full">
+                <div className="overflow-hidden h-60 relative">
+                  <Image
+                    src={project.img}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-80" />
                 </div>
-              </motion.div>
-            </Link>
+                
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-2 text-purple-300">{project.title}</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.slice(0, 3).map((tech, idx) => (
+                      <span 
+                        key={idx} 
+                        className="text-xs bg-purple-900/50 text-purple-300 px-2 py-1 rounded"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              
+              {/* Hover Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-purple-900/80 to-transparent flex items-end justify-center opacity-0 group-hover:opacity-100 transition-opacity p-6">
+                <button className="bg-white text-purple-900 px-4 py-2 rounded-full font-bold transform group-hover:translate-y-0 translate-y-4 transition-transform">
+                  View Details
+                </button>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
+      
+      {/* Project Detail Modal */}
+      <AnimatePresence>
+        {selected !== null && (
+          <motion.div 
+            className="fixed inset-0 bg-black/90 backdrop-blur-lg z-50 flex items-center justify-center p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div 
+              className="relative max-w-4xl w-full bg-gradient-to-br from-[#13072e] to-[#0d0430] border-2 border-purple-500/30 rounded-3xl overflow-hidden"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ type: "spring", damping: 25 }}
+            >
+              <button 
+                className="absolute top-6 right-6 text-white z-10 bg-purple-900 w-10 h-10 rounded-full flex items-center justify-center hover:bg-purple-700 transition-colors"
+                onClick={() => setSelected(null)}
+              >
+                &times;
+              </button>
+              
+              <div className="relative h-96">
+                <Image
+                  src={projects[selected].img}
+                  alt={projects[selected].title}
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#13072e] via-transparent to-transparent" />
+              </div>
+              
+              <div className="p-8">
+                <div className="flex flex-wrap gap-4 mb-6">
+                  {projects[selected].tech.map((tech, idx) => (
+                    <span 
+                      key={idx} 
+                      className="bg-purple-900/50 text-purple-300 px-3 py-1.5 rounded-full text-sm"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                
+                <h3 className="text-3xl font-bold mb-4 text-white">
+                  {projects[selected].title}
+                </h3>
+                
+                <p className="text-gray-300 mb-8 text-lg leading-relaxed">
+                  {projects[selected].description}
+                </p>
+                
+                <div className="flex flex-wrap gap-4">
+                  <motion.a
+                    href={projects[selected].link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3.5 rounded-full font-bold text-lg hover:scale-105 transition-transform"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Visit Live Site
+                  </motion.a>
+                  
+                  <motion.button
+                    className="text-white border border-purple-500 px-8 py-3.5 rounded-full font-bold text-lg hover:bg-purple-900/50 transition-colors"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => setSelected(null)}
+                  >
+                    Close Preview
+                  </motion.button>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
