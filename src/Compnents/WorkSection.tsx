@@ -138,7 +138,7 @@ export default function WorkSection() {
       </div>
       
       {/* Project Detail Modal */}
-      <AnimatePresence>
+<AnimatePresence>
         {selected !== null && (
           <motion.div 
             className="fixed inset-0 bg-black/90 backdrop-blur-lg z-50 flex items-center justify-center p-4"
