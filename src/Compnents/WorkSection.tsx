@@ -10,7 +10,7 @@ const projects = [
   { title: "Portfolio Website", img: "/portfolio.PNG" }, // ✅ Added "/" at start
   { title: "aigroup Website", img: "/aigroup.PNG" },
   { title: "personal Library Manger", img: "/library-manager.PNG" },
-  { title: "personal Library Manger", img: "/library-manager.PNG" },
+  { title: "passaword strenght checker", img: "/image.PNG" },
   { title: "Vooting-booth", img: "/booth.PNG" },
 ];
 
