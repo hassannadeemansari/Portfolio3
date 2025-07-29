@@ -47,26 +47,26 @@ const projects = [
     tech: ["Wordpress", "Schemas"]
   },
   {
-  title: "Personal Library Manager", 
-  img: "/library-manager.PNG", 
-  link: "https://library-manager2.streamlit.app/",
-  description: "A digital bookshelf for organizing your reading journey. Track books you've read, currently reading, and want to read with ratings and reviews. Features search, filtering, and reading statistics.",
-  tech: ["Python", "Streamlit", "SQLite", "Plotly"]
-},
-{
-  title: "Password Strength Guardian", 
-  img: "/image.png", 
-  link: "https://password-str-checker.streamlit.app/",
-  description: "Advanced security tool that analyzes password vulnerability using entropy calculation and pattern recognition. Provides real-time strength feedback and generates uncrackable passwords.",
-  tech: ["Python", "Streamlit", "Cryptography", "Regex", "Security Algorithms"]
-},
-{
-  title: "Digital Voting Booth", 
-  img: "/booth.PNG", 
-  link: "https://voting-booth.streamlit.app/",
-  description: "Secure online voting system with encrypted ballots and real-time results visualization. Implements voter authentication and fraud detection mechanisms for trustworthy elections.",
-  tech: ["Python", "Streamlit", "OOPS" , "Regex"]
-}
+    title: "Personal Library Manager", 
+    img: "/library-manager.PNG", 
+    link: "https://library-manager2.streamlit.app/",
+    description: "A digital bookshelf for organizing your reading journey. Track books you've read, currently reading, and want to read with ratings and reviews. Features search, filtering, and reading statistics.",
+    tech: ["Python", "Streamlit", "SQLite", "Plotly"]
+  },
+  {
+    title: "Password Strength Guardian", 
+    img: "/image.png", 
+    link: "https://password-str-checker.streamlit.app/",
+    description: "Advanced security tool that analyzes password vulnerability using entropy calculation and pattern recognition. Provides real-time strength feedback and generates uncrackable passwords.",
+    tech: ["Python", "Streamlit", "Cryptography", "Regex", "Security Algorithms"]
+  },
+  {
+    title: "Digital Voting Booth", 
+    img: "/booth.PNG", 
+    link: "https://voting-booth.streamlit.app/",
+    description: "Secure online voting system with encrypted ballots and real-time results visualization. Implements voter authentication and fraud detection mechanisms for trustworthy elections.",
+    tech: ["Python", "Streamlit", "OOPS" , "Regex"]
+  }
 ];
 
 export default function WorkSection() {
@@ -92,14 +92,9 @@ export default function WorkSection() {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               whileHover={{ y: -10 }}
-              transition={{ 
-                delay: i * 0.1,
-                duration: 0.5,
-                type: "spring"
-              }}
+              transition={{ delay: i * 0.1, duration: 0.5, type: "spring" }}
               onClick={() => setSelected(i)}
             >
-              {/* Project Card */}
               <div className="border-2 border-purple-500/30 rounded-2xl overflow-hidden bg-gradient-to-br from-[#13072e] to-[#0d0430] h-full">
                 <div className="overflow-hidden h-60 relative">
                   <Image
@@ -110,23 +105,19 @@ export default function WorkSection() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-80" />
                 </div>
-                
+
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2 text-purple-300">{project.title}</h3>
                   <div className="flex flex-wrap gap-2">
                     {project.tech.slice(0, 3).map((tech, idx) => (
-                      <span 
-                        key={idx} 
-                        className="text-xs bg-purple-900/50 text-purple-300 px-2 py-1 rounded"
-                      >
+                      <span key={idx} className="text-xs bg-purple-900/50 text-purple-300 px-2 py-1 rounded">
                         {tech}
                       </span>
                     ))}
                   </div>
                 </div>
               </div>
-              
-              {/* Hover Overlay */}
+
               <div className="absolute inset-0 bg-gradient-to-t from-purple-900/80 to-transparent flex items-end justify-center opacity-0 group-hover:opacity-100 transition-opacity p-6">
                 <button className="bg-white text-purple-900 px-4 py-2 rounded-full font-bold transform group-hover:translate-y-0 translate-y-4 transition-transform">
                   View Details
@@ -136,84 +127,96 @@ export default function WorkSection() {
           ))}
         </div>
       </div>
-      
-      {/* Project Detail Modal */}
-<AnimatePresence>
+
+      <AnimatePresence>
         {selected !== null && (
-          <motion.div 
-            className="fixed inset-0 bg-black/90 backdrop-blur-lg z-50 flex items-center justify-center p-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <motion.div 
-              className="relative max-w-4xl w-full bg-gradient-to-br from-[#13072e] to-[#0d0430] border-2 border-purple-500/30 rounded-3xl overflow-hidden"
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              transition={{ type: "spring", damping: 25 }}
+          <>
+            {/* Desktop Modal */}
+<motion.div
+  className="hidden md:flex fixed inset-0 bg-black/90 backdrop-blur-lg z-50 items-center justify-center p-4"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  exit={{ opacity: 0 }}
+>
+  <motion.div
+    className="relative max-w-4xl w-full bg-gradient-to-br from-[#13072e] to-[#0d0430] border-2 border-purple-500/30 rounded-3xl overflow-hidden"
+    initial={{ scale: 0.8, opacity: 0 }}
+    animate={{ scale: 1, opacity: 1 }}
+    exit={{ scale: 0.8, opacity: 0 }}
+    transition={{ type: "spring", damping: 25 }}
+  >
+    <button
+      className="absolute top-4 right-4 z-10 flex items-center justify-center bg-purple-900 text-white rounded-full w-10 h-10 text-2xl hover:bg-purple-700"
+      onClick={() => setSelected(null)}
+    >
+      &times;
+    </button>
+
+    <div className="relative h-96">
+      <Image src={projects[selected].img} alt={projects[selected].title} fill className="object-cover" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#13072e] via-transparent to-transparent" />
+    </div>
+
+    <div className="p-8">
+      <h3 className="text-3xl font-bold mb-4 text-white">{projects[selected].title}</h3>
+      <p className="text-gray-300 mb-8 text-lg">{projects[selected].description}</p>
+
+      <motion.a
+        href={projects[selected].link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-full font-bold text-lg hover:scale-105 transition-transform"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        Visit Live Site
+      </motion.a>
+    </div>
+  </motion.div>
+</motion.div>
+
+
+            {/* Mobile Center Popup */}
+            <motion.div
+              className="md:hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
             >
-              <button 
-                className="absolute top-6 right-6 text-white z-10 bg-purple-900 w-10 h-10 rounded-full flex items-center justify-center hover:bg-purple-700 transition-colors"
-                onClick={() => setSelected(null)}
+              <motion.div
+                className="relative bg-gradient-to-br from-[#13072e] to-[#0d0430] rounded-2xl p-6 w-[90%] max-h-[85vh] overflow-y-auto border-2 border-purple-500/30"
+                initial={{ y: "100%", scale: 0.8 }}
+                animate={{ y: 0, scale: 1 }}
+                exit={{ y: "100%", scale: 0.8 }}
+                transition={{ type: "spring", damping: 20 }}
               >
-                &times;
-              </button>
-              
-              <div className="relative h-96">
-                <Image
-                  src={projects[selected].img}
-                  alt={projects[selected].title}
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#13072e] via-transparent to-transparent" />
-              </div>
-              
-              <div className="p-8">
-                <div className="flex flex-wrap gap-4 mb-6">
-                  {projects[selected].tech.map((tech, idx) => (
-                    <span 
-                      key={idx} 
-                      className="bg-purple-900/50 text-purple-300 px-3 py-1.5 rounded-full text-sm"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                <button
+                  className="absolute top-3 right-3 z-10 flex items-center justify-center bg-purple-900 text-white rounded-full w-10 h-10 text-2xl hover:bg-purple-700"
+                  onClick={() => setSelected(null)}
+                >
+                  &times;
+                </button>
+
+                <div className="relative h-52 rounded-xl overflow-hidden mb-4">
+                  <Image src={projects[selected].img} alt={projects[selected].title} fill className="object-cover" />
                 </div>
-                
-                <h3 className="text-3xl font-bold mb-4 text-white">
-                  {projects[selected].title}
-                </h3>
-                
-                <p className="text-gray-300 mb-8 text-lg leading-relaxed">
-                  {projects[selected].description}
-                </p>
-                
-                <div className="flex flex-wrap gap-4">
-                  <motion.a
-                    href={projects[selected].link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3.5 rounded-full font-bold text-lg hover:scale-105 transition-transform"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    Visit Live Site
-                  </motion.a>
-                  
-                  <motion.button
-                    className="text-white border border-purple-500 px-8 py-3.5 rounded-full font-bold text-lg hover:bg-purple-900/50 transition-colors"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => setSelected(null)}
-                  >
-                    Close Preview
-                  </motion.button>
-                </div>
-              </div>
+
+                <h3 className="text-2xl font-bold mb-2 text-white">{projects[selected].title}</h3>
+                <p className="text-gray-300 mb-4">{projects[selected].description}</p>
+
+                <motion.a
+                  href={projects[selected].link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full text-center bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-full font-bold text-lg hover:scale-105 transition-transform"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Visit Live Site
+                </motion.a>
+              </motion.div>
             </motion.div>
-          </motion.div>
+          </>
         )}
       </AnimatePresence>
     </section>
