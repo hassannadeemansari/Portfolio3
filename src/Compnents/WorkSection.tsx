@@ -55,7 +55,7 @@ const projects = [
 },
 {
   title: "Password Strength Guardian", 
-  img: "/image.PNG", 
+  img: "/image.png", 
   link: "https://password-str-checker.streamlit.app/",
   description: "Advanced security tool that analyzes password vulnerability using entropy calculation and pattern recognition. Provides real-time strength feedback and generates uncrackable passwords.",
   tech: ["Python", "Streamlit", "Cryptography", "Regex", "Security Algorithms"]
