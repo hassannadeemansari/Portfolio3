@@ -1,19 +1,40 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { useState } from "react";
 
 const skills = [
   "HTML", "CSS", "JavaScript", "TypeScript", "Python", "React.js", "Next.js",
   "Node.js", "Tailwind CSS", "streamlit", "Sanity", "Shadcn", "GSAP",
-  "AI Agents", "Agent SDK", "Chainlit" , "Figma"
+  "AI Agents", "Agent SDK", "Chainlit", "Figma"
 ];
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.25, delayChildren: 0.1 },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, scale: 0.5, rotateY: 90 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    rotateY: 0,
+    transition: {
+      duration: 0.9,
+      ease: [0.25, 0.8, 0.25, 1], // smooth cubic-bezier
+    },
+  },
+};
 
 export default function SkillsSection() {
   const [activeSkill, setActiveSkill] = useState<number | null>(null);
 
   const handleClick = (index: number) => {
     setActiveSkill(index);
-    setTimeout(() => setActiveSkill(null), 700); // Reset after animation ends
+    setTimeout(() => setActiveSkill(null), 700);
   };
 
   return (
@@ -24,7 +45,7 @@ export default function SkillsSection() {
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1, ease: "easeInOut" }}
           className="space-y-6"
         >
           <h2 className="text-4xl font-bold">About Me</h2>
@@ -44,29 +65,39 @@ export default function SkillsSection() {
           </p>
         </motion.div>
 
-        {/* ✅ RIGHT SIDE - Skills */}
+        {/* ✅ RIGHT SIDE - 3D Skills */}
         <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="grid grid-cols-1 sm:grid-cols-3 gap-4"
+          style={{ perspective: "1200px" }} // Gives 3D depth
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 sm:grid-cols-3 gap-6"
         >
           {skills.map((skill, i) => (
-            <div
+            <motion.div
               key={i}
-              className="group relative overflow-hidden rounded-lg"
+              variants={itemVariants}
+              whileHover={{
+                scale: 1.1,
+                rotateX: 10,
+                rotateY: -10,
+                boxShadow: "0px 15px 25px rgba(255, 105, 180, 0.4)",
+                transition: { duration: 0.4 },
+              }}
+              className="group relative overflow-hidden rounded-xl border border-pink-400 "
               onClick={() => handleClick(i)}
             >
-              <button className="relative z-10 w-full px-4 py-2 text-lg font-semibold border border-pink-500 rounded-lg bg-transparent text-white group-hover:shadow-[0_0_15px_rgba(255,255,255,0.6)] transition-all duration-500">
+              <button className="relative z-10 w-full px-4 py-3 text-lg font-semibold text-white">
                 {skill}
               </button>
 
-              {/* ✅ Shine Effect Works on Hover + Click */}
+              {/* ✅ Shine Effect */}
               <span
                 className={`absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 transition-all duration-700 ease-in-out
                   group-hover:left-[100%] ${activeSkill === i ? "left-[100%]" : ""}`}
               ></span>
-            </div>
+            </motion.div>
           ))}
         </motion.div>
       </div>
