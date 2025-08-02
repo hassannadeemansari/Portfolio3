@@ -11,16 +11,6 @@ export default function ContactSection() {
     e.preventDefault();
     setLoading(true);
 
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
-    });
-
-    const data = await res.json();
-    setLoading(false);
-    setSuccess(data.msg ? data.msg[0] : "Message sent!");
-  }
 
   return (
     <section className="relative bg-[#0B0014] py-20 px-6 flex justify-center overflow-hidden">
@@ -137,3 +127,4 @@ function SocialIcon({ href, icon }: { href: string; icon: React.ReactNode }) {
     </a>
   );
 }
+
