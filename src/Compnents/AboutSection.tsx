@@ -20,11 +20,11 @@ export default function AboutSection() {
           >
             {/* ✅ Replaced <img> with <Image /> */}
             <Image
-              src="/port.jpg"
+              src="/pfp.png"
               alt="Profile"
               width={240}
               height={240}
-              className="w-60 h-60 rounded-full object-cover object-center "
+              className="w-60 h-60 rounded-full object-cover object-top "
             />
           </motion.div>
         </motion.div>
