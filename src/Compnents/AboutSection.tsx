@@ -20,7 +20,7 @@ export default function AboutSection() {
           >
             {/* ✅ Replaced <img> with <Image /> */}
             <Image
-              src="/pfp.png"
+              src="/port.jpg"
               alt="Profile"
               width={240}
               height={240}
