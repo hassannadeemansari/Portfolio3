@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-// import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function ContactSection() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -25,15 +24,15 @@ export default function ContactSection() {
 
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <Mail className="text-pink-500" />
+{/*               <Mail className="text-pink-500" /> */}
               <p>hassan@example.com</p>
             </div>
             <div className="flex items-center gap-3">
-              <Phone className="text-pink-500" />
+{/*               <Phone className="text-pink-500" /> */}
               <p>+92 300 1234567</p>
             </div>
             <div className="flex items-center gap-3">
-              <MapPin className="text-pink-500" />
+{/*               <MapPin className="text-pink-500" /> */}
               <p>Karachi, Pakistan</p>
             </div>
           </div>
@@ -225,6 +224,7 @@ export default function ContactSection() {
 //     </a>
 //   );
 // }
+
 
 
 
