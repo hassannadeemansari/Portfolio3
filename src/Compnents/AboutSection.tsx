@@ -24,7 +24,7 @@ export default function AboutSection() {
               alt="Profile"
               width={240}
               height={240}
-              className="w-60 h-60 rounded-full object-cover object-top"
+              className="w-60 h-60 rounded-full object-cover object-center "
             />
           </motion.div>
         </motion.div>
