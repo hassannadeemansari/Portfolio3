@@ -217,6 +217,19 @@ export default function Portfolio3() {
       <div id="contact">
         <ContactSection />
       </div>
+
+<footer className="bg-[#0B0014] py-6">
+  <div className="container mx-auto px-4">
+    <div className="flex justify-center items-center">
+      <p className="text-sm text-gray-400 text-center">
+        © {new Date().getFullYear()} <span className="font-semibold text-white">Hassan Nadeem</span>. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
     </div>
   );
 }
