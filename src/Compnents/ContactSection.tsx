@@ -74,7 +74,7 @@ function ContactInfo() {
         Contact Information
       </h3>
       <p className="mt-2 text-gray-400">
-        Reach out through any of these channels
+        Reach out through any of these Links
       </p>
       <div className="mt-8 space-y-6">
         {items.map((item, index) => (
@@ -155,7 +155,7 @@ function ContactForm() {
         Send a Message
       </h3>
       <p className="mt-2 text-gray-400">
-{/*         I&apos;ll get back to you as soon as possible */}
+        I&apos;ll get back to you as soon as possible
       </p>
 
       <div className="mt-8 space-y-6">
