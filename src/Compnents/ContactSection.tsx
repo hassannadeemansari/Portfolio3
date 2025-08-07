@@ -155,7 +155,7 @@ function ContactForm() {
         Send a Message
       </h3>
       <p className="mt-2 text-gray-400">
-        I&apos;ll get back to you as soon as possible
+{/*         I&apos;ll get back to you as soon as possible */}
       </p>
 
       <div className="mt-8 space-y-6">
