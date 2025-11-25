@@ -67,7 +67,7 @@ export default function Portfolio3() {
     },
     {
       name: "Instagram",
-      link: "https://www.instagram.com/shutuphassan_/",
+      link: "https://www.instagram.com/hassannadeem._/",
       svg: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
