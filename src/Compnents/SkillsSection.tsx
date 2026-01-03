@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const skills = [
   "HTML", "CSS", "JavaScript", "TypeScript", "Python", "React.js", "Next.js",
-  "Node.js", "Tailwind CSS", "streamlit", "Sanity", "Shadcn", "GSAP",
+  "Node.js", "Tailwind CSS", "streamlit", "Sanity", "WordPress", "Shadcn", "GSAP",
   "AI Agents", "Agent SDK", "Chainlit", "Figma"
 ];
 
