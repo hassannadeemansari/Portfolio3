@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import Image from "next/image"; // ✅ Import Next.js Image
+import Image from "next/image"; 
 
 export default function AboutSection() {
   return (
@@ -18,9 +18,9 @@ export default function AboutSection() {
             animate={{ y: [0, -10, 0] }}
             transition={{ repeat: Infinity, duration: 2 }}
           >
-            {/* ✅ Replaced <img> with <Image /> */}
+            
             <Image
-              src="/pfp.png"
+              src="/profilepic.png"
               alt="Profile"
               width={240}
               height={240}
