@@ -5,7 +5,7 @@ import AboutSection from "@/Compnents/AboutSection";
 import SkillsSection from "@/Compnents/SkillsSection";
 import WorkSection from "@/Compnents/WorkSection";
 import ContactSection from "@/Compnents/ContactSection";
-
+import { motion } from "framer-motion";
 export default function Portfolio3() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -87,6 +87,8 @@ export default function Portfolio3() {
       ),
     },
   ];
+
+
 
   return (
     <div className="overflow-x-hidden">
@@ -208,6 +210,115 @@ export default function Portfolio3() {
       <div id="about">
         <AboutSection />
       </div>
+
+<section id="education" className="py-24 px-6 md:px-20 bg-[#0B0014] text-white overflow-hidden">
+      <div className="max-w-5xl mx-auto">
+        
+        {/* Heading */}
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }} 
+          className="text-3xl md:text-4xl font-semibold mb-16 text-center tracking-tight"
+        >
+          Education
+        </motion.h2>
+
+        {/* Timeline Container */}
+        <div className="relative max-w-3xl mx-auto">
+          
+          {/* Vertical Timeline Line */}
+          <div className="absolute left-[7px] top-2 bottom-2 w-[2px] bg-gradient-to-b from-white via-gray-700 to-transparent" />
+
+          <div className="space-y-12">
+            
+
+              {/* Matric */}
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }} 
+              whileInView={{ opacity: 1, x: 0 }} 
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }} 
+              className="relative pl-10 group"
+            >
+              <div className="absolute left-0 top-2 w-4 h-4 bg-gray-600 rounded-full z-10 transition-transform duration-300 group-hover:scale-125 group-hover:bg-white shadow-sm" />
+              
+              <div className="p-5 rounded-xl border border-gray-900 bg-zinc-950/40 backdrop-blur-sm transition-all duration-300 group-hover:border-gray-700 group-hover:bg-zinc-950">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                  <h3 className="text-xl font-medium tracking-tight group-hover:text-gray-200 transition-colors">
+                    Matriculation (Science)
+                  </h3>
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-zinc-800 text-gray-400 w-fit">
+                    2024 Completed
+                  </span>
+                </div>
+                <p className="text-gray-400 leading-relaxed text-sm md:text-base">
+                  Completed Matriculation in  Computer Science.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Intermediate */}
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }} 
+              whileInView={{ opacity: 1, x: 0 }} 
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }} 
+              className="relative pl-10 group"
+            >
+              <div className="absolute left-0 top-2 w-4 h-4 bg-gray-600 rounded-full z-10 transition-transform duration-300 group-hover:scale-125 group-hover:bg-white shadow-sm" />
+              
+              <div className="p-5 rounded-xl border border-gray-900 bg-zinc-950/40 backdrop-blur-sm transition-all duration-300 group-hover:border-gray-700 group-hover:bg-zinc-950">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                  <h3 className="text-xl font-medium tracking-tight group-hover:text-gray-200 transition-colors">
+                    Intermediate (Computer Science)
+                  </h3>
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-zinc-800 text-gray-300 w-fit">
+                    2024 – Present
+                  </span>
+                </div>
+                <p className="text-gray-400 leading-relaxed text-sm md:text-base">
+                  Currently studying Intermediate 
+                </p>
+              </div>
+            </motion.div>
+
+        
+
+                        {/* GIAIC */}
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }} 
+              whileInView={{ opacity: 1, x: 0 }} 
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }} 
+              className="relative pl-10 group"
+            >
+              {/* Timeline Dot with Glow */}
+              <div className="absolute left-0 top-2 w-4 h-4 bg-white rounded-full z-10 transition-transform duration-300 group-hover:scale-125 shadow-[0_0_10px_rgba(255,255,255,0.8)]" />
+              
+              {/* Content Card */}
+              <div className="p-5 rounded-xl border border-gray-900 bg-[#0B0014] backdrop-blur-sm transition-all duration-300 group-hover:border-gray-700 group-hover:bg-zinc-950">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                  <h3 className="text-xl font-medium tracking-tight group-hover:text-gray-200 transition-colors">
+                    GIAIC – Artificial Intelligence
+                  </h3>
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white text-black w-fit">
+                    2024 – Present
+                  </span>
+                </div>
+                <p className="text-gray-400 leading-relaxed text-sm md:text-base">
+                  Governor Initiative for Artificial Intelligence program. Learning Python, TypeScript, AI concepts, and modern web development.
+                </p>
+              </div>
+            </motion.div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
       <div id="skills">
         <SkillsSection />
       </div>

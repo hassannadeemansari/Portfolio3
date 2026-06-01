@@ -5,19 +5,19 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 const projects = [
+    { 
+    title: "Agentia World", 
+    img: "/agentia.PNG", 
+    link: "https://agentia-world-umber.vercel.app/",
+    description: "Digital agency website showcasing services and client portfolio with modern animations.",
+    tech: ["Next.js", "Framer Motion", "tailwind Css", "CSS Modules"]
+  },
   { 
     title: "Netflix Clone", 
     img: "/netflix.PNG", 
     link: "https://netflix-clone22.vercel.app/",
     description: "A fully responsive Netflix replica with movie browsing, trailers, and user authentication.",
-    tech: ["Next.js", "Tailwind CSS", "Firebase", "TMDB API"]
-  },
-  { 
-    title: "Agentia World", 
-    img: "/agentia.PNG", 
-    link: "https://agentia-world-umber.vercel.app/",
-    description: "Digital agency website showcasing services and client portfolio with modern animations.",
-    tech: ["React", "GSAP", "Framer Motion", "CSS Modules"]
+    tech: ["Next.js", "Tailwind CSS", "", ]
   },
   { 
     title: "Infonet Services", 
@@ -31,7 +31,7 @@ const projects = [
     img: "/food.PNG", 
     link: "https://food-tuck-beta.vercel.app/",
     description: "Online ordering system for food trucks with real-time menu updates.",
-    tech: ["React", "Redux", "Node.js", "MongoDB"]
+    tech: ["Nextjs" , "tailwind Css", "MongoDB"]
   },
   { 
     title: "Developer Portfolio", 
@@ -52,14 +52,14 @@ const projects = [
     img: "/library-manager.PNG", 
     link: "https://library-manager2.streamlit.app/",
     description: "A digital bookshelf for organizing your reading journey. Track books you've read, currently reading, and want to read with ratings and reviews. Features search, filtering, and reading statistics.",
-    tech: ["Python", "Streamlit", "SQLite", "Plotly"]
+    tech: ["Python", "Streamlit", "Plotly"]
   },
   {
     title: "Password Strength Guardian", 
     img: "/image.png", 
     link: "https://password-str-checker.streamlit.app/",
     description: "Advanced security tool that analyzes password vulnerability using entropy calculation and pattern recognition. Provides real-time strength feedback and generates uncrackable passwords.",
-    tech: ["Python", "Streamlit", "Cryptography", "Regex", "Security Algorithms"]
+    tech: ["Python", "Streamlit", , "Regex",]
   },
   {
     title: "Digital Voting Booth", 

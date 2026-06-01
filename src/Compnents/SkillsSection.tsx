@@ -4,9 +4,8 @@ import { motion, Variants } from "framer-motion";
 import { useState } from "react";
 
 const skills = [
-  "HTML", "CSS", "JavaScript", "TypeScript", "Python", "React.js", "Next.js",
-  "Node.js", "Tailwind CSS", "streamlit", "Sanity", "Shadcn", "WordPress" , "GSAP",
-  "AI Agents", "Agent SDK", "Chainlit", "Figma"
+  "HTML", "CSS", "JavaScript", "TypeScript", "Python", "React.js", "Next.js", "Agentic AI", "Tailwind CSS", "streamlit", "Sanity", "Shadcn", "WordPress" , "GSAP",
+  "AI Agents", "Agent SDK", "LLM", "Chainlit", "Figma" 
 ];
 
 const containerVariants: Variants = {
