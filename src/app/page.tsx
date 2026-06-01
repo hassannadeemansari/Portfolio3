@@ -272,7 +272,7 @@ export default function Portfolio3() {
               <div className="p-5 rounded-xl border border-gray-900 bg-zinc-950/40 backdrop-blur-sm transition-all duration-300 group-hover:border-gray-700 group-hover:bg-zinc-950">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
                   <h3 className="text-xl font-medium tracking-tight group-hover:text-gray-200 transition-colors">
-                    Intermediate (Computer Science)
+                    Intermediate 
                   </h3>
                   <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-zinc-800 text-gray-300 w-fit">
                     2024 – Present
