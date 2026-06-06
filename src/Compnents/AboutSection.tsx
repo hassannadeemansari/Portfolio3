@@ -14,7 +14,7 @@ export default function AboutSection() {
           className="flex justify-center"
         >
           <motion.div
-            className="relative w-64 h-64 rounded-full border-4 border-purple-900 brightness-80 shadow-xl shadow-purple-500 flex items-center justify-center"
+            className="relative w-64 h-64 rounded-full border-4 border-purple-900 brightness-80 shadow-xl shadow-purple-400 flex items-center justify-center"
             animate={{ y: [0, -10, 0] }}
             transition={{ repeat: Infinity, duration: 2 }}
           >
